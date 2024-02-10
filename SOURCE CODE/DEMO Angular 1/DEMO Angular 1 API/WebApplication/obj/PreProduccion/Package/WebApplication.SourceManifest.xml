@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="D:\Suma-T\Suma-T API\WebApplication\obj\PreProduccion\Package\PackageTmp" managedRuntimeVersion="v4.0" />
+  <setAcl path="D:\Suma-T\Suma-T API\WebApplication\obj\PreProduccion\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="D:\Suma-T\Suma-T API\WebApplication\obj\PreProduccion\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

@@ -1,0 +1,19 @@
+﻿<div class="padded" ng-controller="clienteDatosCtrl">
+    <div class="alert alert-info" ng-show="!getCliente()">
+        No hay un cliente cargado
+    </div>
+
+    <div class="panel" ng-show="getCliente()">
+        <div class="panel-heading">
+            <h1>{{getCliente().nombre}} {{getCliente().apellido}}</h1>
+        </div>
+        <div class="panel-body">
+            <p>{{getCliente().tipoDocumento}}: {{getCliente().documento}}</p>
+            <p>Cuenta {{getCliente().tipoCuenta}}: {{getCliente().cuenta}}</p>
+            <p>Tarjeta {{getCliente().tipoTarjeta}}: <span>{{getCliente().tarjeta}}</span></p>
+            <p>Vencimiento: {{getCliente().fechaVencimiento}}</p>
+            <p>E-Mail: {{getCliente().email}}</p>
+            <p>Situacion de la Cuenta:{{getCliente().situacionCuenta}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+.cargarGif {
+  background: url("../Img/loading.gif") no-repeat scroll center center / contain rgba(0, 0, 0, 0);
+  display: none;
+  height: 20px;
+  width: 20px;
+  float: right;
+  padding-top: 28px;
+  margin-left: 14px;
+}
+.cargarGifshow{
+  display: block;
+}
+.hideAlert{
+  display: none;
+}
+.showAlert{
+  display: block;
+}
+
+.showMenu{
+  display: block;
+}
+.gridStyle{
+  height: 360px;
+  position: relative;
+}
+.ngViewport.ng-scope {
+  overflow-x: hidden;
+}
+.botoneraMenu{
+  color: #aeb2b7;
+}
+.showDetail{
+ display: none;
+}
+.cargarShow{
+  display: block;
+}
+
+.mosntrando {width:100%;  height: 60px; overflow-x:auto; overflow-y: hidden;}
+
+.lessColor{color: #a4aaba; font-size: 11px;}
+
+.alineaD{text-align: right;}
+
+#hidden-table-info th{font-size: 11px;}
+
+.tablaPersonalizada{
+  font-size:8pt;
+}
+.tablaPersonalizada tr td{
+  padding: 5px !important;
+  white-space: nowrap;
+  width: 1px;
+}
+.bgRojo{
+  background-color: #FFC3C3;
+}
+
+.last{
+  background-color: #aec785 !important;
+  border-radius: 2px 2px 2px 2px;
+}
+.last .bgWhite{
+  background-color: white !important;
+}
+
+.panel{
+    border: solid 2px;
+    border-color: lightgray;
+}
+
+.padded{
+    padding: 5px 5px 5px 5px;
+}
+
+.active{
+    color: #4cae4c;
+}
+
+.empty-panel{
+    height: 100px;
+    text-align:center;
+}
+
+.empty-panel-placeholder {
+    padding:40px 40px 40px 40px;
+}
+
+.inhabilitado {
+    opacity:0.4;
+}

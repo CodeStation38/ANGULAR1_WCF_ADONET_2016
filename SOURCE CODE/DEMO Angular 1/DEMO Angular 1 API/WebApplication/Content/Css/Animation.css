@@ -1,0 +1,49 @@
+.animation-our.ng-enter, .animation-our.ng-leave {
+  position:absolute;
+  width: 81%;
+}
+.animation-our.ng-enter {
+  -webkit-transition:0.5s linear all;
+  -moz-transition:0.5s linear all;
+  -ms-transition:0.5s linear all;
+  transition:0.5s linear all;
+}
+.animation-our.ng-leave {
+  -webkit-transition: 0.3s linear all;
+  -moz-transition: 0.3s linear all;
+  -ms-transition: 0.3s linear all;
+  transition: 0.3s linear all;
+}
+.animation-our.ng-enter
+{
+
+  opacity: 0;
+
+}
+.animation-our.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.animation-our.ng-leave{
+  opacity: 1;
+}
+.animation-our.ng-leave.ng-leave-active{
+  opacity: 0;
+  z-index: -1;
+}
+.my-toggle-animation {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+  max-height: 500px;
+  overflow: hidden;
+}
+.my-toggle-animation.disabled {
+  max-height: 0px;
+  padding-bottom: 0px;
+}
+.my-hide-animation{
+  display:none
+}
+.showAnimation{
+  display: block;
+}
+

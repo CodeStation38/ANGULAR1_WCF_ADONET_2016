@@ -1,0 +1,25 @@
+﻿<div ng-controller="clienteAltaPagoAutomaticoCtrl">
+    <div class="container">
+        <div class="col-sm-12">
+            <div class="page-header"><h1>Alta a Pago Automático</h1></div>
+
+            <div class="btn-group btn-group-justified">
+                <div class="btn-group">
+                    <button type="button" ng-model="pagoautomatico.btnpaso1" class="btn btn-success" ng-disabled="pagoautomatico.btnpaso1" ng-click="CambiarAPaso(1)">1. Datos de la Adhesión</button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" ng-model="pagoautomatico.btnpaso2" class="btn btn-success" ng-disabled="pagoautomatico.btnpaso2" ng-click="CambiarAPaso(2)">2. Datos de la Cuenta</button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" ng-model="pagoautomatico.btnpaso3" class="btn btn-success" ng-disabled="pagoautomatico.btnpaso3" ng-click="CambiarAPaso(3)">3. Confirmación</button>
+                </div>
+            </div>
+            <br /><br /><br />
+
+            <div data-ui-view></div>
+
+            
+
+        </div>
+    </div>
+</div>

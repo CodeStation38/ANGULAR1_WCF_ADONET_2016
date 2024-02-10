@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0ca6311b-0cd6-49dc-baa5-22148b490b11" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:58514/ParametriaService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ParametriaService31.xsd" MetadataType="Schema" ID="1287009f-d578-4d4c-a3d4-97e514200f24" SourceId="1" SourceUrl="http://localhost:58514/ParametriaService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ParametriaService.xsd" MetadataType="Schema" ID="1bbb62d6-b874-42f6-bef6-4bce84c7e92c" SourceId="1" SourceUrl="http://localhost:58514/ParametriaService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ParametriaService1.xsd" MetadataType="Schema" ID="6a53f32e-0744-4c2f-8075-d7d279418bda" SourceId="1" SourceUrl="http://localhost:58514/ParametriaService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ParametriaService32.xsd" MetadataType="Schema" ID="7d738241-0bdf-4524-b374-5bfde8fbdb02" SourceId="1" SourceUrl="http://localhost:58514/ParametriaService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ParametriaService.disco" MetadataType="Disco" ID="991244d6-f872-40ff-9f18-9329dadc4c08" SourceId="1" SourceUrl="http://localhost:58514/ParametriaService.svc?disco" />
+    <MetadataFile FileName="ParametriaService3.xsd" MetadataType="Schema" ID="b0d8983a-07eb-42a5-9b39-00688bf1cdfb" SourceId="1" SourceUrl="http://localhost:58514/ParametriaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ParametriaService1.wsdl" MetadataType="Wsdl" ID="9690cf41-d28c-425e-973a-1631bf350e98" SourceId="1" SourceUrl="http://localhost:58514/ParametriaService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

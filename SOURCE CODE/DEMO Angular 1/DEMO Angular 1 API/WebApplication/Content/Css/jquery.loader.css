@@ -1,0 +1,73 @@
+/* .loader
+-----------------------------------------------------------------------------------------*/
+.loader {
+  height: 120px;
+  left: 50%;
+  margin: -20px 0 0 -20px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 250px;
+  z-index: 1999;
+}
+.loader .loader-load {
+  background: #fbfafa url(../../img/loading.gif) no-repeat;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  cursor: none;
+  height: 124px;
+  left: 50%;
+  margin: -50px 0 0 -50px;
+  -webkit-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  -moz-opacity: 0.5;
+  -ms-opacity: 0.5;
+  -o-opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  opacity: 0.3;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  width: 124px;
+  z-index: 1000;
+}
+.loader .loader-overlay {
+  background: #000;
+  bottom: 0;
+  display: none;
+  height: 100%;
+  left: 0;
+  -webkit-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  -moz-opacity: 0.5;
+  -ms-opacity: 0.5;
+  -o-opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  opacity: 0.3;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+.loader.hide {
+  display: none !important;
+}
+.loader.overlay {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+.loader.overlay .loader-overlay {
+  display: block;
+}

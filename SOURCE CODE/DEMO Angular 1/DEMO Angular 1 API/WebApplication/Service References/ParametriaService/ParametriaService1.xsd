@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Domain" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Domain" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfacp_abm_campo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="acp_abm_campo" nillable="true" type="tns:acp_abm_campo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfacp_abm_campo" nillable="true" type="tns:ArrayOfacp_abm_campo" />
+  <xs:complexType name="acp_abm_campo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Orden" type="xs:int" />
+      <xs:element minOccurs="0" name="cantidadDecimal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="codigoTabla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcionFK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="esIdentity" type="xs:boolean" />
+      <xs:element minOccurs="0" name="esPk" type="xs:int" />
+      <xs:element minOccurs="0" name="etiqueta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="longitud" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreCampo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreTabla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="permiteEdicion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="pkTablaFK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tablaFK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDato" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="acp_abm_campo" nillable="true" type="tns:acp_abm_campo" />
+  <xs:complexType name="atb_abm_tabla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="moduloCodigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="permiteAlta" type="xs:boolean" />
+      <xs:element minOccurs="0" name="permiteBaja" type="xs:boolean" />
+      <xs:element minOccurs="0" name="tabla" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="atb_abm_tabla" nillable="true" type="tns:atb_abm_tabla" />
+  <xs:complexType name="ArrayOftablasRelacionada">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tablasRelacionada" nillable="true" type="tns:tablasRelacionada" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftablasRelacionada" nillable="true" type="tns:ArrayOftablasRelacionada" />
+  <xs:complexType name="tablasRelacionada">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="campos" nillable="true" type="tns:ArrayOfcamposTablasRelacionada" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tablasRelacionada" nillable="true" type="tns:tablasRelacionada" />
+  <xs:complexType name="ArrayOfcamposTablasRelacionada">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="camposTablasRelacionada" nillable="true" type="tns:camposTablasRelacionada" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcamposTablasRelacionada" nillable="true" type="tns:ArrayOfcamposTablasRelacionada" />
+  <xs:complexType name="camposTablasRelacionada">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descFK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pkFK" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="camposTablasRelacionada" nillable="true" type="tns:camposTablasRelacionada" />
+</xs:schema>

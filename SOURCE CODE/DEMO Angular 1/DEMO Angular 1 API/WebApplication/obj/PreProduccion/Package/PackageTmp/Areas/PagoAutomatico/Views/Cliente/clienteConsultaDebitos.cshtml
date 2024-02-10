@@ -1,0 +1,26 @@
+﻿
+<div ng-controller="clienteDebitosCtrl">
+    <h2>{{pagina_origen}}</h2>
+    <table class="table table-bordered table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>Fecha vencimiento / específica</th>
+                <th>Fecha de débito en cuenta cliente</th>
+                <th>Estado débito</th>
+                <th>Fecha estado débito</th>
+                <th>Motivo rechazo</th>
+                <th>Monto debitado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="debito in Adhesiondebitos">
+                <td>{{debito.fechaVencimiento_especifica}}</td>
+                <td>{{debito.fechaDebitoCuentaCliente}}</td>
+                <td>{{debito.estadoDebito}}</td>
+                <td>{{debito.fechaEstadoDebito}}</td>
+                <td>{{debito.motivoRechazo}}</td>
+                <td>{{debito.montoDebitado}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

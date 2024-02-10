@@ -1,0 +1,63 @@
+﻿<div ng-controller="clienteCtrl as cliente">
+    <div class="panel">
+        <div class="panel-heading">
+        <h2>Busqueda de cliente</h2>
+        </div>
+
+        <form class="panel-body">
+            <div class="form-group col-md-6">
+                <label class="control-label">Apellido</label>
+                <input type="text" class="form-control" ng-model="apellido" />
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="control-label">Nombre</label>
+                <input type="text" class="form-control" ng-model="nombre" />
+            </div>
+
+            <div class="form-inline col-md-6">
+                <label class="control-label">Documento</label>
+                <div>
+                    <select class="form-control" ng-model="tipoDocumento">
+                        <option ng-repeat="opt in tiposDocumento" value="{{opt.valor}}">{{opt.descripcion}}</option>
+                    </select>
+                    <input type="text" class="form-control" ng-model="documento" />
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="control-label">Nro. de Cuenta</label>
+                <input type="text" class="form-control" ng-model="cuenta" />
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="control-label">Nro. de Tarjeta</label>
+                <input type="text" class="form-control" ng-model="tarjeta" />
+            </div>
+        </form>
+        <div class="panel-footer">
+            <button type="button" class="btn btn-primary" ng-click="buscarClientes()">Buscar</button>
+        </div>
+    </div>
+
+    <div id="divTabla">
+        <table ng-show="resultados.length" class="table table-bordered table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>Apellido y Nombre(Titular)</th>
+                    <th>Cuenta</th>
+                    <th>Tarjeta Titular</th>
+                    <th>Adicionales</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="resultado in resultados">
+                    <th><a href="" ng-click="cargarCliente({{resultado.id}})">{{resultado.nombre +' '+ resultado.apellido}}</a></th>
+                    <th>{{resultado.cuenta}}</th>
+                    <th>{{resultado.tarjeta}}</th>
+                    <th>{{resultado.adicionales}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

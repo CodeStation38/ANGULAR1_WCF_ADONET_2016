@@ -1,0 +1,3 @@
+﻿<%@ ServiceHost Language="C#" Debug="true"
+    Factory="ServicePagoAutomaticoManager.HostFactory.ServiceHostFactory, ServicePagoAutomaticoManager"
+    Service="ServicePagoAutomaticoManager.ParametriaService" CodeBehind="ParametriaService.svc.cs" %>

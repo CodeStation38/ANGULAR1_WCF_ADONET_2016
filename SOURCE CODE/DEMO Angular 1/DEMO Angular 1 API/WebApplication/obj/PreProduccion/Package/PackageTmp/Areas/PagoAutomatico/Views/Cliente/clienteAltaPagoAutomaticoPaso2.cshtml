@@ -1,0 +1,61 @@
+﻿<!--NEW-->
+<div class="container">
+    <div class="col-sm-8 col-sm-offset-2">
+
+            <div class="form-group">
+                <label>Cuentas existentes</label>
+                <select name="Cuentas" class="form-control" ng-model="pagoautomatico.cuentasBancariasCliente" ng-change="P2_SeleccionDeCuenta()">
+                    <option ng-repeat="cuentaBancaria in cuentasBancarias" value="{{cuentaBancaria.Codigo}}">{{cuentaBancaria.Descripcion}}</option>
+                    <option value="Nueva">Cuenta Nueva</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Mismo Titular</label>
+                <select name="MismoTitular" class="form-control" ng-model="pagoautomatico.mismoTitular" ng-change="P2_CambioEnMismoTitular()" ng-disabled="pagoautomatico.cuentaExistenteSelected">
+                    <option ng-option value="Si">Si</option>
+                    <option ng-option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="form-group" ng-show="pagoautomatico.mismoTitular == 'No'">
+                <label>Nombre y Apellido del Titular del CBU</label>
+                <input type="text" ng-model="pagoautomatico.nombreTitularCBU" placeholder="Nombre y Apellido del Titular del CBU" ng-disabled="pagoautomatico.cuentaExistenteSelected" />
+
+            </div>
+
+            <div class="form-group" ng-show="pagoautomatico.mismoTitular == 'No'">
+                <label>Número de DNI del titular del CBU</label>
+                <input type="text" ng-model="pagoautomatico.DNITitularCBU" placeholder="Número de DNI del titular del CBU" ng-disabled="pagoautomatico.cuentaExistenteSelected" />
+            </div>
+
+            <div class="form-group">
+                <label>CUIL</label>
+                <input type="text" name="cuil" class="form-control" ng-model="pagoautomatico.cuil" placeholder="CUIL"  ng-disabled="pagoautomatico.cuentaExistenteSelected">
+            </div>
+
+            <div class="form-group">
+                <label>Tipo de Cuenta</label>
+                <select name="TipoCuenta" class="form-control" ng-model="pagoautomatico.tipoCuenta" ng-disabled="pagoautomatico.cuentaExistenteSelected">
+                    <option ng-repeat="tipoCuenta in tiposCuenta" value="{{tipoCuenta.codigo}}">{{tipoCuenta.descripcion}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Banco</label>
+                <select class="form-control" ng-model="pagoautomatico.banco"
+                        ng-options="banco.descripcion for banco in bancos track by banco.codigo" ng-disabled="pagoautomatico.cuentaExistenteSelected"></select>
+            </div>
+
+            <div class="form-group">
+                <label>CBU</label>
+                <input type="text" name="cbu" class="form-control" ng-model="pagoautomatico.cbu" placeholder="CBU" ng-disabled="pagoautomatico.cuentaExistenteSelected">
+            </div>
+            
+            <div class="form-group">
+                <button type="button" class="btn btn-info" ng-click="CambiarAPaso(3)">Siguiente</button>
+            </div>
+
+    </div>
+</div>
+

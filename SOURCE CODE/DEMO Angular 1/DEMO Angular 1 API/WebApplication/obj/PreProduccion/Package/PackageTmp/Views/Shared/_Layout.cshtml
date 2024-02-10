@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate"/>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta http-equiv="vary" content="accept-encoding" />
+
+    <meta charset="utf-8" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title>Falabella</title>
+    @Styles.Render("~/Content/bundles")
+</head>
+<body ng-app="coreApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!--end ojo ojo ojo Add your site or application content here -->
+    <section id="container" ng-controller="GeneralCtrl">
+        <!--header start-->
+        <header class="header white-bg">
+
+            <div class="sidebar-toggle-box">
+                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+            </div>
+            <!--logo start-->
+            <a ng-href="#/" class="logo"><img src="Content/Img/Falabella-Chile.jpg"> <span class="cargarGif" ng-class="{cargarGifshow : CargarGif}"></span></a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <!--  notification end -->
+            </div>
+            <div class="top-nav ">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#/javascript:;">
+                            <span class="username">{{Username}} </span>
+                        </a>
+                    </li>
+                    <li class="sb-toggle-right">
+                        <i class="fa  fa-align-right menuGif"></i>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li>
+                        <a class="active" ui-sref="cliente.home" id="menuInicio">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu dcjq-parent-li">
+                        <a class="dcjq-parent" id="menuPagoAutomatico"
+                           href=" javascript:;">
+                            <i class="fa fa-dollar"></i>
+                            <span>Pago Automático</span>
+                            <span class="dcjq-icon"></span>
+                        </a>
+                        <ul class="sub" style="display: block;">
+                            <li>
+                                <a id="menuitemAdhesionesVigentes" ui-sref="cliente.adhesionesVigentes({clienteId: getCliente().id})">
+                                    <span>Adhesiones Vigentes</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="menuitemNuevaAdhesion" ui-sref="cliente.altaPagoAutomatico.Paso1">
+                                    <span>Nueva Adhesion</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="menuitemHistoricoAdhesiones" ui-sref="cliente.historicoAdhesiones({clienteId: getCliente().id})">
+                                    <span>Historico Adhesiones</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="menuitemHistoricoCambios" ui-sref="cliente.historicoCambios">
+                                    <span>Historico de Cambios</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu dcjq-parent-li">
+                        <a href="javascript:;" class="dcjq-parent">
+                            <i class="fa fa-sitemap"></i>
+                            <span>Parametría</span>
+                            <span class="dcjq-icon"></span>
+                        </a>
+                        <ul class="sub" style="display: block;">
+                            <li>
+                                <a ng-href="#/bancos">
+                                    <span>Bancos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ng-href="#/feriados">
+                                    <span>Feriados</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ng-href="#/parametros">
+                                    <span>Parametría General</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="" href="#/preguntasFrecuentes" id="menuPreguntasFrecuentes">
+                            <i class="fa fa-question-circle"></i>
+                            <span>Preguntas Frecuentes</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <section class="hideAlert" ng-class="{showAlert: cargarAlert}">
+                    <div class="alert" ng-class="typeAlert">
+                        <strong>{{msgAlert}}</strong>
+                    </div>
+                </section>
+                <div growl></div>
+                <div data-ui-view="">
+                    @RenderBody()
+                </div>
+
+            </section>
+        </section>
+        <!--main content end-->
+        <!-- Right Slidebar start -->
+        <div id="menuCliente" class="sb-slidebar sb-right sb-style-overlay">
+
+            <div ng-include="'PagoAutomatico/Cliente/clienteDatos'"></div>
+
+        </div>
+        <!-- Right Slidebar end -->
+
+    </section>
+
+    @Scripts.Render("~/bundles/general")
+    @Scripts.Render("~/bundles/angularApp")
+    @RenderSection("scripts", required: false)
+
+    <script>
+        //custom select box
+        $(function () {
+            $('select.styled').customSelect();
+        });
+
+        $(document).ready(function () {
+            $("#popoverData").popover({
+                html: true,
+                content: function () {
+                    return $('#popoverDataEstado').html();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

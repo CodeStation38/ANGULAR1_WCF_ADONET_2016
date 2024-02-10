@@ -1,0 +1,47 @@
+﻿
+<div ng-controller="clienteHomeCtrl">
+    <h2>Adhesiones Vigentes</h2>
+    <div>
+        <div ng-show="!adhesiones.length">
+            <div class="panel empty-panel">
+                <p class="panel empty-panel-placeholder">No hay adhesiones vigentes para el cliente seleccionado</p>
+            </div>
+        </div>
+        <table class="table table-bordered table-condensed table-hover" ng-show="adhesiones.length">
+            <thead>
+                <tr>
+                    <th>Nro. Adhesión</th>
+                    <th>Fecha Adhesión</th>
+                    <th>Tipo Adhesión</th>
+                    <th>Monto Débito</th>
+                    <th>Fecha Débito</th>
+                    <th colspan="3">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="adhesion in adhesiones">
+                    <!-- ng-click="linkHacia('adhesion.consulta',{adhesionId: adhesion.numero},$event)"> -->
+                    <td><a href="" ng-click="irConAdhesion(adhesion,$event,'cliente.debitos',{adhesionId: adhesion.numero,origen: 'vigente'})">{{adhesion.numero}}</a></td>
+                    
+                    <td>{{adhesion.fecha}}</td>
+                    <td>{{adhesion.tipo.descripcion}}</td>
+                    <td>{{adhesion.montoDebito}}</td>
+                    <td>{{adhesion.fechaDebito}}</td>
+                    
+                    <td> <!-- ng-click="linkHacia('cliente.adhesion.modificacion',{adhesionId: adhesion.numero},$event)"> --> <i class="fa fa-pencil fa-2x"></i></td>
+                    <td ng-click="linkStopDebit(adhesion,$event)">
+                        <a href="">
+                            <i class="fa fa-2x" ng-class="{
+                                inhabilitado: !adhesion.aplicaStopDebit,
+                                'fa-times-circle': !adhesion.tieneStopDebit,
+                                'fa-arrow-right': adhesion.tieneStopDebit
+                                }">
+                            </i>
+                        </a>
+                    </td>
+                    <td> <!-- ng-click="linkHacia('cliente.adhesion.baja',{adhesionId: adhesion.numero},$event)"> --> <i class="fa fa-trash-o fa-2x"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

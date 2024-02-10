@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:58514/ParametriaService.svc?xsd=xsd2" namespace="Service.Core.DataContracts.DTO.Output" />
+  <xs:import schemaLocation="http://localhost:58514/ParametriaService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:58514/ParametriaService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Domain" />
+  <xs:element name="buscarTiposCuenta">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarTiposCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="Service.Core.DataContracts.DTO.Output" minOccurs="0" name="buscarTiposCuentaResult" nillable="true" type="q1:ArrayOfTipoCuentaDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarBancos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarBancosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="Service.Core.DataContracts.DTO.Output" minOccurs="0" name="buscarBancosResult" nillable="true" type="q2:ArrayOfBancoDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarTiposMonto">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarTiposMontoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="Service.Core.DataContracts.DTO.Output" minOccurs="0" name="buscarTiposMontoResult" nillable="true" type="q3:ArrayOfTipoMontoDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarTiposAdhesion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarTiposAdhesionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="Service.Core.DataContracts.DTO.Output" minOccurs="0" name="buscarTiposAdhesionResult" nillable="true" type="q4:ArrayOfTipoAdhesionDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarTiposDocumento">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarTiposDocumentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="Service.Core.DataContracts.DTO.Output" minOccurs="0" name="buscarTiposDocumentoResult" nillable="true" type="q5:ArrayOfTipoDocumentoDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarModulos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarModulosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="Service.Core.DataContracts.DTO.Output" minOccurs="0" name="buscarModulosResult" nillable="true" type="q6:ArrayOfModuloDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarTablas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="modulo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarTablasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="Service.Core.DataContracts.DTO.Output" minOccurs="0" name="buscarTablasResult" nillable="true" type="q7:ArrayOfatb_abm_tablaDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerTablaDatos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nameTable" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerTablaDatosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="obtenerTablaDatosResult" nillable="true" type="q8:ArrayOfArrayOfKeyValueOfstringanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerTabla">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nameTable" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerTablaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="Service.Core.DataContracts.DTO.Output" minOccurs="0" name="obtenerTablaResult" nillable="true" type="q9:AbmTablaDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerCamposTabla">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="moduloCod" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obtenerCamposTablaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Domain" minOccurs="0" name="obtenerCamposTablaResult" nillable="true" type="q10:ArrayOfacp_abm_campo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

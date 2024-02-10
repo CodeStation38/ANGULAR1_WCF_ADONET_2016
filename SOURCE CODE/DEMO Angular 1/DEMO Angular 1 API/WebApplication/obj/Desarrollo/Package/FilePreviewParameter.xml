@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/PreProduccion/FrontComercial/WebApplication" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Suma-T\\Suma-T\ API\\WebApplication\\obj\\Desarrollo\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Suma-T\\Suma-T\ API\\WebApplication\\obj\\Desarrollo\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-WebApplication-20160211095845.mdf;Initial Catalog=aspnet-WebApplication-20160211095845;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\Suma-T\\Suma-T\ API\\WebApplication\\obj\\Desarrollo\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

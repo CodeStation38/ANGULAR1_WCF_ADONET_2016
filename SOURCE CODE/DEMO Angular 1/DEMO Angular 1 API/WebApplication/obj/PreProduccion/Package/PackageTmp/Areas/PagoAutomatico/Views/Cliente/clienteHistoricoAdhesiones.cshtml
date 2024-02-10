@@ -1,0 +1,36 @@
+﻿<div ng-controller="clienteHistoricoAdhesionesCtrl">
+    <h2>Historico de Adhesiones</h2>
+    <div>
+        <div ng-show="!adhesiones.length">
+            <div class="panel empty-panel">
+                <p class="panel empty-panel-placeholder">No hay un historico de adhesiones para el cliente seleccionado</p>
+            </div>
+        </div>
+        <table class="table table-bordered table-condensed table-hover" ng-show="adhesiones.length">
+            <thead>
+                <tr>
+                    <th>Nro. Adhesión</th>
+                    <th>Fecha Adhesión</th>
+                    <th>Tipo Adhesión</th>
+                    <th>Monto Débito</th>
+                    <th>Fecha Débito</th>
+                    <th>Estado</th>
+                    <th>Fecha de Modificación</th>
+                    <th>Fecha Aplica Modificación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="adhesion in adhesiones">
+                    <td><a href="" ng-click="linkHacia('cliente.debitos',{adhesionId: adhesion.numero,origen: 'historicos'},$event)">{{adhesion.numero}}</a></td>
+                    <td>{{adhesion.fecha}}</td>
+                    <td>{{adhesion.tipo.descripcion}}</td>
+                    <td>{{adhesion.montoDebito}}</td>
+                    <td>{{adhesion.fechaDebito}}</td>
+                    <td>{{adhesion.estado}}</td>
+                    <td>{{adhesion.fechaModificacion}}</td>
+                    <td>{{adhesion.fechaAplicaModificacion}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ParametriaService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:58514/ParametriaService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:58514/ParametriaService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:58514/ParametriaService.svc?xsd=xsd2" namespace="Service.Core.DataContracts.DTO.Output" />
+      <xsd:import schemaLocation="http://localhost:58514/ParametriaService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:58514/ParametriaService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Domain" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IParametriaService_buscarTiposCuenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarTiposCuenta" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_buscarTiposCuenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarTiposCuentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_buscarBancos_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarBancos" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_buscarBancos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarBancosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_buscarTiposMonto_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarTiposMonto" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_buscarTiposMonto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarTiposMontoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_buscarTiposAdhesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarTiposAdhesion" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_buscarTiposAdhesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarTiposAdhesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_buscarTiposDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarTiposDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_buscarTiposDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarTiposDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_buscarModulos_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarModulos" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_buscarModulos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarModulosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_buscarTablas_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarTablas" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_buscarTablas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarTablasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_obtenerTablaDatos_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerTablaDatos" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_obtenerTablaDatos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerTablaDatosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_obtenerTabla_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerTabla" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_obtenerTabla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerTablaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_obtenerCamposTabla_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerCamposTabla" />
+  </wsdl:message>
+  <wsdl:message name="IParametriaService_obtenerCamposTabla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerCamposTablaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IParametriaService">
+    <wsdl:operation name="buscarTiposCuenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParametriaService/buscarTiposCuenta" message="tns:IParametriaService_buscarTiposCuenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParametriaService/buscarTiposCuentaResponse" message="tns:IParametriaService_buscarTiposCuenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarBancos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParametriaService/buscarBancos" message="tns:IParametriaService_buscarBancos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParametriaService/buscarBancosResponse" message="tns:IParametriaService_buscarBancos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarTiposMonto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParametriaService/buscarTiposMonto" message="tns:IParametriaService_buscarTiposMonto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParametriaService/buscarTiposMontoResponse" message="tns:IParametriaService_buscarTiposMonto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarTiposAdhesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParametriaService/buscarTiposAdhesion" message="tns:IParametriaService_buscarTiposAdhesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParametriaService/buscarTiposAdhesionResponse" message="tns:IParametriaService_buscarTiposAdhesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarTiposDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParametriaService/buscarTiposDocumento" message="tns:IParametriaService_buscarTiposDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParametriaService/buscarTiposDocumentoResponse" message="tns:IParametriaService_buscarTiposDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarModulos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParametriaService/buscarModulos" message="tns:IParametriaService_buscarModulos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParametriaService/buscarModulosResponse" message="tns:IParametriaService_buscarModulos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarTablas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParametriaService/buscarTablas" message="tns:IParametriaService_buscarTablas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParametriaService/buscarTablasResponse" message="tns:IParametriaService_buscarTablas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTablaDatos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParametriaService/obtenerTablaDatos" message="tns:IParametriaService_obtenerTablaDatos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParametriaService/obtenerTablaDatosResponse" message="tns:IParametriaService_obtenerTablaDatos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTabla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParametriaService/obtenerTabla" message="tns:IParametriaService_obtenerTabla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParametriaService/obtenerTablaResponse" message="tns:IParametriaService_obtenerTabla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerCamposTabla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParametriaService/obtenerCamposTabla" message="tns:IParametriaService_obtenerCamposTabla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParametriaService/obtenerCamposTablaResponse" message="tns:IParametriaService_obtenerCamposTabla_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IParametriaService" type="tns:IParametriaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="buscarTiposCuenta">
+      <soap:operation soapAction="http://tempuri.org/IParametriaService/buscarTiposCuenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarBancos">
+      <soap:operation soapAction="http://tempuri.org/IParametriaService/buscarBancos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTiposMonto">
+      <soap:operation soapAction="http://tempuri.org/IParametriaService/buscarTiposMonto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTiposAdhesion">
+      <soap:operation soapAction="http://tempuri.org/IParametriaService/buscarTiposAdhesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTiposDocumento">
+      <soap:operation soapAction="http://tempuri.org/IParametriaService/buscarTiposDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarModulos">
+      <soap:operation soapAction="http://tempuri.org/IParametriaService/buscarModulos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTablas">
+      <soap:operation soapAction="http://tempuri.org/IParametriaService/buscarTablas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTablaDatos">
+      <soap:operation soapAction="http://tempuri.org/IParametriaService/obtenerTablaDatos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTabla">
+      <soap:operation soapAction="http://tempuri.org/IParametriaService/obtenerTabla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerCamposTabla">
+      <soap:operation soapAction="http://tempuri.org/IParametriaService/obtenerCamposTabla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ParametriaService">
+    <wsdl:port name="BasicHttpBinding_IParametriaService" binding="tns:BasicHttpBinding_IParametriaService">
+      <soap:address location="http://localhost:58514/ParametriaService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

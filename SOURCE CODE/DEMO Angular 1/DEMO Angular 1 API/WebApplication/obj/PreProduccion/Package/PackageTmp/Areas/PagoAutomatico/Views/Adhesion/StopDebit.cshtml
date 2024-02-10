@@ -1,0 +1,60 @@
+﻿<div class="panel">
+    <div class="panel-heading">
+        <h2>{{titulo}} Stop Debit </h2>
+    </div>
+    <div class="panel-body">
+
+        <div class="col-md-6">
+            <div>
+                <h3>Datos de la Adhesion</h3>
+            </div>
+            <div>
+                <div>
+                    <p>Tipo de Adhesion: {{getAdhesion().tipo.descripcion}}</p>
+                </div>
+                <div>
+                    <p>Fecha de Debito: {{getAdhesion().fechaDebito}}</p>
+                </div>
+                <div>
+                    <p>Monto a debitar: {{getAdhesion().montoDebito}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <h3>Datos del Cliente</h3>
+            </div>
+            <div>
+                <div>
+                    <p>Mismo Titular?: {{((cuentaBancaria.mismoTitular)? "Si" : "No")}}</p>
+                </div>
+                <div>
+                    <p>Titular: {{cuentaBancaria.CbuTitular}}</p>
+                </div>
+                <div>
+                    <p>CUIL: {{cuentaBancaria.CbuTitularCuit}}</p>
+                </div>
+                <div>
+                    <p>Tipo de Cuenta: {{cuentaBancaria.tipoCuenta}}</p>
+                </div>
+                <div>
+                    <p>Banco: {{cuentaBancaria.BancoDescripcion}}</p>
+                </div>
+                <div>
+                    <p>CBU: {{cuentaBancaria.CbuNumero}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-danger" ng-show="!getAdhesion().aplicaStopDebit">Las adhesiones puntuales no pueden recibir Stop Debit. Si desea cancelar la adhesión, proceda a darla de baja.</div>
+
+    </div>
+    <div class="panel-footer" ng-show="getAdhesion().aplicaStopDebit">
+        <div ng-show="hayDebitoEnCurso">
+            <div class="alert alert-danger">El debito se encuentra en curso. El Stop Debit aplicará para el vencimiento siguiente ( {{proximoVencimiento}} )</div>
+        </div>
+        <div>
+            <button class="btn btn-default" ng-click="grabarStopDebit(getAdhesion())">{{boton}}</button>
+        </div>
+    </div>
+</div>

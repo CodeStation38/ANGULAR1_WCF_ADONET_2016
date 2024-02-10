@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/MsBuild/2003">
+
+  <PropertyGroup Condition="$(ConfigurationName) == 'Debug'">
+    <baseAddressTCP>net.tcp://localhost</baseAddressTCP>
+    <baseAddress>http://C099SRDTEC08</baseAddress>
+    <!--<key>$(ProjectDir)\Compilation/RSAGroup.com.ar.snk</key>-->
+    <environment>$(ProjectDir)Proxy\$(ConfigurationName)</environment>
+    <configFiles>$(ProjectDir)ConfigFiles\$(ConfigurationName)</configFiles>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(ConfigurationName) == 'Desarrollo'">
+    <baseAddressTCP>net.tcp://$(ConfigurationName).backend.rsa-arg.com.ar</baseAddressTCP>
+    <baseAddress>http://$(ConfigurationName).backend.rsa-arg.com.ar</baseAddress>
+    <key>$(ProjectDir)\Compilation/RSAGroup.com.ar.snk</key>
+    <environment>$(ProjectDir)Proxy\$(ConfigurationName)</environment>
+    <configFiles>$(ProjectDir)ConfigFiles\$(ConfigurationName)</configFiles>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(ConfigurationName) == 'Testing'">
+    <baseAddressTCP>net.tcp://$(ConfigurationName).backend.rsa-arg.com.ar</baseAddressTCP>
+    <baseAddress>http://$(ConfigurationName).backend.rsa-arg.com.ar</baseAddress>
+    <key>$(ProjectDir)\Compilation/RSAGroup.com.ar.snk</key>
+    <environment>$(ProjectDir)Proxy\$(ConfigurationName)</environment>
+    <configFiles>$(ProjectDir)ConfigFiles\$(ConfigurationName)</configFiles>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(ConfigurationName) == 'PreProduccion'">
+    <baseAddressTCP>net.tcp://$(ConfigurationName).backend.rsa-arg.com.ar</baseAddressTCP>
+    <baseAddress>http://$(ConfigurationName).backend.rsa-arg.com.ar</baseAddress>
+    <key>$(ProjectDir)\Compilation/RSAGroup.com.ar.snk</key>
+    <environment>$(ProjectDir)Proxy\$(ConfigurationName)</environment>
+    <configFiles>$(ProjectDir)ConfigFiles\$(ConfigurationName)</configFiles>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(ConfigurationName) == 'Produccion'">
+    <baseAddressTCP>net.tcp://$(ConfigurationName).backend.rsa-arg.com.ar</baseAddressTCP>
+    <baseAddress>http://$(ConfigurationName).backend.rsa-arg.com.ar</baseAddress>
+    <key>$(ProjectDir)\Compilation/RSAGroup.com.ar.snk</key>
+    <environment>$(ProjectDir)Proxy\$(ConfigurationName)</environment>
+    <configFiles>$(ProjectDir)ConfigFiles\$(ConfigurationName)</configFiles>
+  </PropertyGroup>
+  <Target Name="UpdateWebReference">
+    <Message Text="Actualizando referencias Web" />
+    <MakeDir Condition="!Exists($(environment))" Directories="$(environment)" />
+
+    <Message Text="Inicio " />
+    <!--<ItemGroup>
+      <Service Include="ServiceSiseManager">        
+        <url>$(baseAddressTCP)/ServiceSiseManager/Solicitud.svc</url>
+      </Service>
+      <Service Include="ServiceOperationManager">
+        <url>$(baseAddressTCP)/ServiceOperationManager/ServiceOperationManager.svc</url>
+      </Service>
+      <Service Include="ServiceSourceManager">
+        <url>$(baseAddressTCP)/ServiceSourceManager/ServiceSourceManager.svc</url>
+      </Service>
+    </ItemGroup>-->
+    
+    <ItemGroup>
+      <ServicWSDL Include="WSIAdhesionService">
+        <url>$(baseAddress)/Servicios/ServicePagoAutomaticoManager/AdhesionService.svc?wsdl</url>
+      </ServicWSDL>
+   
+    </ItemGroup>
+    <GetFrameworkSdkPath>
+      <Output TaskParameter="Path" PropertyName="SdkPath" />
+    </GetFrameworkSdkPath>
+    <GetFrameworkPath>
+      <Output TaskParameter="Path" PropertyName="FrameworkPath" />
+    </GetFrameworkPath>
+
+    <Exec Command="&quot;$(SdkPath)bin\NETFX 4.5 Tools\svcutil.exe&quot; /language:cs /namespace:*,%(Service.Identity) %(Service.url) /ct:System.Collections.Generic.List`1 /out:$(environment)\%(Service.Identity).cs"/>
+    <Exec Command="$(FrameworkPath)\csc.exe /t:library /r:System.Web.Services.dll /r:System.Xml.dll /out:$(environment)\%(Service.Identity).dll $(environment)\%(Service.Identity).cs /keyfile:$(key)"/>
+    <Message Text="Medio" />
+    <Exec Command="&quot;$(SdkPath)bin\NETFX 4.5 Tools\wsdl.exe&quot; /sharetypes /namespace:%(ServicWSDL.Identity) /l:CS /protocol:SOAP %(ServicWSDL.url) /out:$(environment)\%(ServicWSDL.Identity).cs"/>
+    
+    <Exec Command="$(FrameworkPath)\csc.exe /t:library /r:System.Web.Services.dll /r:System.Xml.dll /out:$(environment)\%(ServicWSDL.Identity).dll $(environment)\%(ServicWSDL.Identity).cs /keyfile:$(key)"/>
+    <Message Text="Fin" />
+
+    <ItemGroup>
+      <ProxyToCopy Include="$(environment)\**\*.dll"/>
+      <DeleteSourceCodeProxy Include="$(environment)\**\*.cs"/>
+      <ResourceToCopy Include="C:\TeamProjects\Web\$(ConfigurationName)\Resources\**\*.*"/>
+    </ItemGroup>
+
+    <Copy SourceFiles="@(ProxyToCopy)" DestinationFolder="$(TargetDir)" />
+    <Copy OverwriteReadOnlyFiles="true" SourceFiles="@(ResourceToCopy)"
+    			DestinationFiles="@(ResourceToCopy->'$(ProjectDir)%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Delete Files="@(DeleteSourceCodeProxy)" />
+  </Target>
+</Project>

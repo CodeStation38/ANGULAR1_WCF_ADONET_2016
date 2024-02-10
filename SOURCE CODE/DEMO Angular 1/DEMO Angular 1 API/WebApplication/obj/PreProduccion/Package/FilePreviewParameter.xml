@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/PreProduccion/FrontComercial/WebApplication" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Suma-T\\Suma-T\ API\\WebApplication\\obj\\PreProduccion\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Suma-T\\Suma-T\ API\\WebApplication\\obj\\PreProduccion\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="" tags="" />
+</parameters>

@@ -1,0 +1,59 @@
+﻿<!--NEW-->
+<div class="container">
+    <div class="col-sm-8 col-sm-offset-2">
+
+        <div class="form-group">
+            <label>Tipo de Adhesion</label>
+            <select class="form-control" ng-model="pagoautomatico.tipoAdhesion" ng-change="P1_ChequearSiPermitoAdhesionPorTipo()"
+                    ng-options="tipoAdhesion.descripcion for tipoAdhesion in tiposAdhesion track by tipoAdhesion.codigo"></select>
+            <br />
+            <!--<label> Valor seleccionado  = {{pagoautomatico.tipoAdhesion}}</label>-->
+        </div>
+
+        <div class="form-group">
+            <label>Fecha de Débito</label>
+            <select name="tipoFechaDebito" class="form-control" ng-model="pagoautomatico.tipoFechaDebito" ng-change="P1_ChequearFechaDebito()" ng-disabled="pagoautomatico.tipoFechaDebitoBool">
+                <option ng-option value="V">Vencimiento</option>
+                <option ng-option value="F">Fecha especifica</option>
+            </select>
+        </div>
+
+        <div class="form-group" ng-if="pagoautomatico.tipoFechaDebito == 'V'">
+            <label>Fecha de Vencimiento: {{pagoautomatico.fechaDebito | date:"dd/MM/yyyy" }}</label>
+        </div>
+
+        <div class="form-group" ng-show="pagoautomatico.tipoFechaDebito == 'F' && pagoautomatico.tipoAdhesion.codigo =='R'">
+            <label>Día Específico</label>
+            <input type="text" id="diaEspVenc" ng-model="pagoautomatico.diaEspecificoDebito" placeholder="Día específico" ng-blur="P1_ChequearDiaEspecifico()" />
+        </div>
+
+        <div class="form-group" ng-show="pagoautomatico.tipoFechaDebito == 'F' && pagoautomatico.tipoAdhesion.codigo =='P'">
+            <p class="input-group col-md-3">
+                <input type="text" class="form-control" data-ng-model="pagoautomatico.fechaEspecifica" datepicker-popup="yyyy-MM-dd" name="fechaEspecifica" is-open="openedFEspecifica" close-text="Close" ng-blur="P1_ChequearFechaEspecifica()" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="openFEspecifica($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+
+
+        <div class="form-group">
+            <label>Monto a Debitar</label>
+            <select class="form-control" ng-model="pagoautomatico.tipoMonto" ng-change="P1_ChequearMontoADebitar()" ng-disabled="pagoautomatico.tipoMontoBool" 
+                    ng-options="tipoMonto.descripcion for tipoMonto in tiposMonto | filter: FiltrarTipoMonto track by tipoMonto.codigo"></select>
+            <br />
+            <!--<label> Valor seleccionado  = {{pagoautomatico.tipoMonto}}</label>-->
+        </div>
+        <div class="form-group" ng-if="pagoautomatico.tipoMonto.codigo == 'F'">
+            <label>Monto específico</label>
+            <input type="text" ng-model="pagoautomatico.montoDebitoEspecifico" placeholder="Monto específico" />
+        </div>
+
+        <div class="form-group">
+            <button type="button" class="btn btn-info" ng-click="CambiarAPaso(2)">Siguiente</button>
+        </div>
+
+    </div>
+</div>
+
+

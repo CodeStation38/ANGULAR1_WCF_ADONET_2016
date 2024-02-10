@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Service.Core.DataContracts.DTO.Output" elementFormDefault="qualified" targetNamespace="Service.Core.DataContracts.DTO.Output" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:58514/ParametriaService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Domain" />
+  <xs:import schemaLocation="http://localhost:58514/ParametriaService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfTipoCuentaDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoCuentaDto" nillable="true" type="tns:TipoCuentaDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoCuentaDto" nillable="true" type="tns:ArrayOfTipoCuentaDto" />
+  <xs:complexType name="TipoCuentaDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoCuentaDto" nillable="true" type="tns:TipoCuentaDto" />
+  <xs:complexType name="ArrayOfBancoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BancoDto" nillable="true" type="tns:BancoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBancoDto" nillable="true" type="tns:ArrayOfBancoDto" />
+  <xs:complexType name="BancoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BancoDto" nillable="true" type="tns:BancoDto" />
+  <xs:complexType name="ArrayOfTipoMontoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoMontoDto" nillable="true" type="tns:TipoMontoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoMontoDto" nillable="true" type="tns:ArrayOfTipoMontoDto" />
+  <xs:complexType name="TipoMontoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoMontoDto" nillable="true" type="tns:TipoMontoDto" />
+  <xs:complexType name="ArrayOfTipoAdhesionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoAdhesionDto" nillable="true" type="tns:TipoAdhesionDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoAdhesionDto" nillable="true" type="tns:ArrayOfTipoAdhesionDto" />
+  <xs:complexType name="TipoAdhesionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoAdhesionDto" nillable="true" type="tns:TipoAdhesionDto" />
+  <xs:complexType name="ArrayOfTipoDocumentoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoDocumentoDto" nillable="true" type="tns:TipoDocumentoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoDocumentoDto" nillable="true" type="tns:ArrayOfTipoDocumentoDto" />
+  <xs:complexType name="TipoDocumentoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoDocumentoDto" nillable="true" type="tns:TipoDocumentoDto" />
+  <xs:complexType name="ArrayOfModuloDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModuloDto" nillable="true" type="tns:ModuloDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModuloDto" nillable="true" type="tns:ArrayOfModuloDto" />
+  <xs:complexType name="ModuloDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModuloDto" nillable="true" type="tns:ModuloDto" />
+  <xs:complexType name="ArrayOfatb_abm_tablaDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="atb_abm_tablaDto" nillable="true" type="tns:atb_abm_tablaDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfatb_abm_tablaDto" nillable="true" type="tns:ArrayOfatb_abm_tablaDto" />
+  <xs:complexType name="atb_abm_tablaDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="moduloCodigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="permiteAlta" type="xs:boolean" />
+      <xs:element minOccurs="0" name="permiteBaja" type="xs:boolean" />
+      <xs:element minOccurs="0" name="tabla" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="atb_abm_tablaDto" nillable="true" type="tns:atb_abm_tablaDto" />
+  <xs:complexType name="AbmTablaDto">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Domain" minOccurs="0" name="campos" nillable="true" type="q1:ArrayOfacp_abm_campo" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="datos" nillable="true" type="q2:ArrayOfArrayOfKeyValueOfstringanyType" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Domain" minOccurs="0" name="tabla" nillable="true" type="q3:atb_abm_tabla" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Domain" minOccurs="0" name="tablasRelacionadas" nillable="true" type="q4:ArrayOftablasRelacionada" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbmTablaDto" nillable="true" type="tns:AbmTablaDto" />
+</xs:schema>

@@ -1,0 +1,66 @@
+﻿<div>
+    
+
+    <div id="filtro" class="panel">
+        <div class="panel-heading">
+            <h2>Historico de Cambios</h2>
+        </div>
+        <form class="form-group panel-body">
+
+            <div class="col-md-4">
+                <label class="control-label">Desde</label>
+                <div class="input-group">
+                    <input type="text" class="form-control " ng-model="desde" datepicker-popup="dd/MM/yyyy" name="desde" is-open="openedDesde" current-text="Hoy" clear-text="Borrar" close-text="Cerrar" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openDesde($event)"><i class="fa fa-calendar"></i></button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <label class="control-label">Hasta</label>
+                <div class="input-group">
+                    <input type="text" class="form-control " ng-model="hasta" datepicker-popup="dd/MM/yyyy" name="hasta" is-open="openedHasta" current-text="Hoy" clear-text="Borrar" close-text="Cerrar" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openHasta($event)"><i class="fa fa-calendar"></i></button>
+                    </span>
+                </div>
+            </div>
+
+        </form>
+        <div class="panel-footer">
+            <button type="button" class="btn btn-primary" ng-click="buscarCambios()">Buscar</button>
+        </div>
+    </div>
+
+    <div id="divTabla">
+        <table ng-show="resultados.length" class="table table-bordered table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>N° de Trámite</th>
+                    <th>Usuario</th>
+                    <th>Canal</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>N° de Adhesión</th>
+                    <th>Imprimir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="resultado in resultados">
+                    <th><a href="">{{resultado.codigo}}</a></th>
+                    <th>{{resultado.descripcion}}</th>
+                    <th>{{resultado.tramite}}</th>
+                    <th>{{resultado.usuario}}</th>
+                    <th>{{resultado.canal}}</th>
+                    <th>{{resultado.fecha}}</th>
+                    <th>{{resultado.hora}}</th>
+                    <th>{{resultado.adhesion}}</th>
+                    <th><i class="fa fa-2x fa-print"></i></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

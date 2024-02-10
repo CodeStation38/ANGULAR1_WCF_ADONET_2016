@@ -1,0 +1,60 @@
+﻿<div class="pager">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="page-header">
+                <h2>AMB</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-12">
+    @*<div loading-container="tableParams.settings().$loading">*@
+    @*cargando..*@
+    <div class="panel panel-default">
+        @*<div class="panel-heading">
+                {{mod.descripcion}}
+            </div>*@
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel-group">
+                        <div class="col-md-6">
+                            <label class="control-label">Modulo</label>
+                            <div>
+                                <select class="form-control" ng-model="modulo" ng-change="buscarTablas(modulo)" placeholder="Seleccionar Modulo">
+                                    <option value="">SELECCIONAR</option>
+                                    <option ng-repeat="mod in modulos" value="{{mod.codigo}}">{{mod.descripcion}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="control-label">Tablas del modulo {{modulo}} </label>
+                            <div>
+                                <select class="form-control" ng-model="tablacodigoSeleccionada" ng-change="obtenerTablaCompleta(tablacodigoSeleccionada)">
+                                    <option value="">SELECCIONAR</option>
+                                    <option ng-repeat=" tabla in tablas" value="{{tabla.codigo}}">
+                                        {{tabla.descripcion}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-group">
+                        <div class="col-md-12" style="margin-top: 10px">
+                            <button type="button" class="btn btn-success" name="Alta" data-ng-click="altaItem()" ng-if="veralta"><i class="fa fa-plus-circle fa-2x"></i></button>
+                        </div>
+                    </div>
+                    <div class="panel-group">
+                        <div loading-container="gridOptions.settings().$loading">
+                            <div class="col-md-12" style="margin-top: 10px">
+                                <div class="gridStyle" ng-grid="gridOptions" ng-if="validarGrilla">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
